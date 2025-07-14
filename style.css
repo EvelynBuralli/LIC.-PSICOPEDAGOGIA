@@ -102,22 +102,22 @@ h1 {
 /* --- ESTILOS PARA LOS NUEVOS ESTADOS DE LAS MATERIAS --- */
 
 .materia.pendiente {
-    background-color: #FF8FBA; /* ¡Nuevo color para Pendiente! */
+    background-color: #FF8FBA; /* ¡PENDIENTE: #FF8FBA! */
     color: #333;
 }
 
-.materia.cursando_activo { /* ¡NUEVA CLASE para el estado "CURSANDO"! */
-    background-color: #FFB3FC; /* ¡Nuevo color para Cursando! */
+.materia.cursando_activo { /* ¡CURSANDO: #FFB3FC! */
+    background-color: #FFB3FC;
     color: #333;
 }
 
-.materia.cursada_finalizada { /* ¡NUEVA CLASE para el estado "CURSADA"! */
-    background-color: #E6C9FF; /* ¡Nuevo color para Cursada! */
+.materia.cursada_finalizada { /* ¡CURSADA: #E6C9FF! */
+    background-color: #E6C9FF;
     color: #333;
 }
 
 .materia.aprobada {
-    background-color: #9933FF; /* ¡Nuevo color para Aprobada! */
+    background-color: #9933FF; /* ¡APROBADA: #9933FF! */
     color: #333;
     text-decoration: line-through; /* ¡Aquí se tacha la materia! */
     opacity: 0.8; /* Ligeramente más transparente cuando está aprobada */
@@ -125,7 +125,7 @@ h1 {
 
 /* Estilo para las materias que están habilitadas para rendir el final */
 .materia.habilitada-final {
-    background-color: #FFFF99; /* ¡NUEVO COLOR DISTINTIVO para Habilitada para Final! (Amarillo vibrante) */
+    background-color: #FFFF99; /* Color distintivo para Habilitada para Final. */
     color: #333;
     border: 2px solid #FFD700; /* Un borde amarillo oscuro para destacar */
     animation: pulse 1.5s infinite alternate; /* Añadimos una pequeña animación para que se note más */
