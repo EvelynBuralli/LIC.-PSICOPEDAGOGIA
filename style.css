@@ -20,33 +20,62 @@ h1, h2, h3 {
 
 main {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas pequeñas */
     justify-content: center;
     padding: 20px;
-    gap: 20px; /* Espacio entre los contenedores */
+    gap: 20px; /* Espacio entre las columnas */
 }
 
-#malla-container {
-    flex: 2; /* Ocupa más espacio en pantallas grandes */
-    min-width: 300px; /* Ancho mínimo para el contenedor de la malla */
+/* Estilos para cada columna de año */
+.anio-columna {
+    flex: 1; /* Para que las columnas ocupen el espacio disponible */
+    min-width: 280px; /* Ancho mínimo de cada columna */
+    max-width: 350px; /* Ancho máximo de cada columna */
     background-color: white;
-    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Materias una debajo de la otra */
+    gap: 10px; /* Espacio entre las materias */
+}
+
+.anio-columna h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #4CAF50; /* Puedes cambiar este color si quieres */
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#malla-container.malla-columnas { /* Usamos la clase que añadimos en HTML */
+    display: flex; /* Para que los años sean columnas */
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las columnas de año */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    justify-content: center; /* Centra las columnas */
+    background-color: transparent; /* Fondo transparente para que solo se vean las columnas individuales */
+    box-shadow: none; /* Sin sombra en el contenedor principal */
+    padding: 0; /* Sin padding en el contenedor principal */
 }
 
 .materia {
-    background-color: #e9e9e9;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    margin-bottom: 10px;
+    padding: 12px 15px; /* Un poco más de padding */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra suave */
+    text-align: center;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease-in-out; /* Transición suave para todos los cambios */
+    font-weight: 500;
+    color: #333; /* Color de texto por defecto */
+    border: 1px solid transparent; /* Borde transparente por defecto, luego los estados lo cambian */
 }
 
 .materia:hover {
-    background-color: #dcdcdc;
+    transform: translateY(-2px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .materia.resaltada-previas {
@@ -105,28 +134,6 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 20px;
-}
-
-/* Estilos para años y cuatrimestres */
-.anio-cuatrimestre-container {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #fff;
-}
-
-.anio-cuatrimestre-container h2 {
-    color: #007bff;
-    margin-top: 0;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.materias-list {
-    display: grid;
-    gap: 10px;
 }
 
 /* Estilos para los diferentes estados de las materias (Tus colores) */
