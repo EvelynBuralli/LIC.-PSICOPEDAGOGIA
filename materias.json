@@ -5,7 +5,8 @@
     "anio": 1,
     "cuatrimestre": "Anual",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["ETI_RESP", "TIF"]
+    "correlativas_posteriores": ["ETI_RESP", "TIF"],
+    "estado": "pendiente"
   },
   {
     "id": "TALLER_PSICO",
@@ -13,7 +14,8 @@
     "anio": 1,
     "cuatrimestre": "Anual",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["TEOR1", "ETI_RESP", "TEORI2", "TEORI3", "PSP_INST", "TIF"]
+    "correlativas_posteriores": ["TEOR1", "ETI_RESP", "TEORI2", "TEORI3", "PSP_INST", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSI_DESARR",
@@ -21,7 +23,8 @@
     "anio": 1,
     "cuatrimestre": "Anual",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["DYT_PSP", "PSIAN", "PSI_ADANC", "TIF"]
+    "correlativas_posteriores": ["DYT_PSP", "PSIAN", "PSI_ADANC", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSI_PERS",
@@ -29,7 +32,8 @@
     "anio": 1,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["FUN_LA", "PSIAN", "TEORI2", "TEORI3", "PSI_ADANC", "PPA_1", "TIF"]
+    "correlativas_posteriores": ["FUN_LA", "PSIAN", "TEORI2", "TEORI3", "PSI_ADANC", "PPA_1", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSI_EDUCACI",
@@ -37,7 +41,8 @@
     "anio": 1,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["DID_Y_ESP", "PSI_COG_AP", "PEDA", "PSP_INST", "TIF"]
+    "correlativas_posteriores": ["DID_Y_ESP", "PSI_COG_AP", "PEDA", "PSP_INST", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "DES_NEURO_AP",
@@ -45,7 +50,8 @@
     "anio": 1,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["TEOR1", "TIF"]
+    "correlativas_posteriores": ["TEOR1", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PARADIG_INV_SOC",
@@ -53,7 +59,8 @@
     "anio": 1,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["DID_Y_ESP", "ESTDST", "TIF"]
+    "correlativas_posteriores": ["DID_Y_ESP", "ESTDST", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "DID_Y_ESP",
@@ -61,7 +68,8 @@
     "anio": 1,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_EDUCACI", "PARADIG_INV_SOC"],
-    "correlativas_posteriores": ["TIF"]
+    "correlativas_posteriores": ["TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSI_COG_AP",
@@ -69,7 +77,8 @@
     "anio": 1,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_EDUCACI"],
-    "correlativas_posteriores": ["TEOR1", "ESTDST", "TIF"]
+    "correlativas_posteriores": ["TEOR1", "ESTDST", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PEDA",
@@ -77,7 +86,8 @@
     "anio": 1,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_EDUCACI"],
-    "correlativas_posteriores": ["PSP_INST", "TIF"]
+    "correlativas_posteriores": ["PSP_INST", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "FUN_LA",
@@ -85,7 +95,8 @@
     "anio": 1,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_PERS"],
-    "correlativas_posteriores": ["DYT_PSP", "TEORI2", "TEORI3", "TIF"]
+    "correlativas_posteriores": ["DYT_PSP", "TEORI2", "TEORI3", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "TEO101",
@@ -93,7 +104,8 @@
     "anio": 2,
     "cuatrimestre": "Anual",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["TIF"]
+    "correlativas_posteriores": ["TIF"],
+"estado": "pendiente"
   },
   {
     "id": "DYT_PSP",
@@ -101,7 +113,8 @@
     "anio": 2,
     "cuatrimestre": "Anual",
     "correlativas_previas": ["PSI_DESARR", "FUN_LA"],
-    "correlativas_posteriores": ["DYT_PSP2", "TIF"]
+    "correlativas_posteriores": ["DYT_PSP2", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "TEOR1",
@@ -109,7 +122,8 @@
     "anio": 2,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["TALLER_PSICO", "DES_NEURO_AP", "PSI_COG_AP"],
-    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"]
+    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "ETI_RESP",
@@ -117,7 +131,8 @@
     "anio": 2,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["FILO", "TALLER_PSICO"],
-    "correlativas_posteriores": ["OPT1", "OPT2", "PSP_FCOM", "TIF"]
+    "correlativas_posteriores": ["OPT1", "OPT2", "PSP_FCOM", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSIAN",
@@ -125,7 +140,8 @@
     "anio": 2,
     "cuatrimestre": "Anual",
     "correlativas_previas": ["PSI_DESARR", "PSI_PERS"],
-    "correlativas_posteriores": ["PPA_1", "TIF"]
+    "correlativas_posteriores": ["PPA_1", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "TEORI2",
@@ -133,7 +149,8 @@
     "anio": 2,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["TALLER_PSICO", "FUN_LA", "PSI_PERS"],
-    "correlativas_posteriores": ["PSPT_A", "TIF"]
+    "correlativas_posteriores": ["PSPT_A", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "TEORI3",
@@ -141,7 +158,8 @@
     "anio": 2,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["TALLER_PSICO", "FUN_LA", "PSI_PERS"],
-    "correlativas_posteriores": ["PSPT_A", "TIF"]
+    "correlativas_posteriores": ["PSPT_A", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "ESTDST",
@@ -149,7 +167,8 @@
     "anio": 2,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PARADIG_INV_SOC", "PSI_COG_AP"],
-    "correlativas_posteriores": ["PSCTA", "MIS_1", "TIF"]
+    "correlativas_posteriores": ["PSCTA", "MIS_1", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSP_INST",
@@ -157,7 +176,8 @@
     "anio": 2,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["TALLER_PSICO", "PSI_EDUCACI", "PEDA"],
-    "correlativas_posteriores": ["PGE_OIE", "PSP_INST2", "ORP_VOC", "INP_ORG", "TIF"]
+    "correlativas_posteriores": ["PGE_OIE", "PSP_INST2", "ORP_VOC", "INP_ORG", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSI_ADANC",
@@ -165,7 +185,8 @@
     "anio": 2,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_DESARR", "PSI_PERS"],
-    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"]
+    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "DSI_1",
@@ -173,7 +194,8 @@
     "anio": 3,
     "cuatrimestre": "Anual",
     "correlativas_previas": [],
-    "correlativas_posteriores": ["TIF"]
+    "correlativas_posteriores": ["TIF"],
+"estado": "pendiente"
   },
   {
     "id": "DYT_PSP2",
@@ -181,7 +203,8 @@
     "anio": 3,
     "cuatrimestre": "Anual",
     "correlativas_previas": ["DYT_PSP", "PSI_ADANC", "TEOR1"],
-    "correlativas_posteriores": ["INT_IYJ", "INT_AA", "TIF"]
+    "correlativas_posteriores": ["INT_IYJ", "INT_AA", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSPT_A",
@@ -189,7 +212,8 @@
     "anio": 3,
     "cuatrimestre": "Anual",
     "correlativas_previas": ["TEOR1", "TEORI2", "TEORI3", "PSI_ADANC"],
-    "correlativas_posteriores": ["INT_AA", "TIF"]
+    "correlativas_posteriores": ["INT_AA", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PGE_OIE",
@@ -197,7 +221,8 @@
     "anio": 3,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["PSP_INST"],
-    "correlativas_posteriores": ["EST_TEM", "TIF"]
+    "correlativas_posteriores": ["EST_TEM", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSCTA",
@@ -205,7 +230,8 @@
     "anio": 3,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["ESTDST"],
-    "correlativas_posteriores": ["INT_IYJ", "TIF"]
+    "correlativas_posteriores": ["INT_IYJ", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "OPT1",
@@ -213,7 +239,8 @@
     "anio": 3,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["ETI_RESP"],
-    "correlativas_posteriores": ["TIF"]
+    "correlativas_posteriores": ["TIF"],
+"estado": "pendiente"
   },
   {
     "id": "OPT2",
@@ -221,7 +248,8 @@
     "anio": 3,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["ETI_RESP"],
-    "correlativas_posteriores": ["TIF"]
+    "correlativas_posteriores": ["TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSP_INST2",
@@ -229,7 +257,8 @@
     "anio": 3,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSP_INST"],
-    "correlativas_posteriores": ["PSP_LAB", "ORP_VOC", "INP_ORG", "TIF"]
+    "correlativas_posteriores": ["PSP_LAB", "ORP_VOC", "INP_ORG", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PPA_1",
@@ -237,7 +266,8 @@
     "anio": 3,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["PSI_PERS", "PSIAN"],
-    "correlativas_posteriores": ["EST_TEM", "TIF"]
+    "correlativas_posteriores": ["EST_TEM", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "MIS_1",
@@ -245,7 +275,8 @@
     "anio": 3,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": ["ESTDST"],
-    "correlativas_posteriores": ["PSP_LAB", "INT_IYJ", "TIF"]
+    "correlativas_posteriores": ["PSP_LAB", "INT_IYJ", "TIF"],
+"estado": "pendiente"
   },
   {
     "id": "PSP_LAB",
@@ -253,7 +284,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["PSP_INST2", "MIS_1"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "ORP_VOC",
@@ -261,7 +293,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["PSP_INST", "PSP_INST2"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "EST_TEM",
@@ -269,7 +302,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["PGE_OIE", "PPA_1"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "PSP_FCOM",
@@ -277,7 +311,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["ETI_RESP"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "INT_IYJ",
@@ -285,7 +320,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["DYT_PSP2", "PSCTA", "MIS_1"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "INP_ORG",
@@ -293,7 +329,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["PSP_INST", "PSP_INST2"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "INT_AA",
@@ -301,7 +338,8 @@
     "anio": 4,
     "cuatrimestre": "1er Cuatrimestre",
     "correlativas_previas": ["DYT_PSP2", "PSPT_A"],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "ELE_1",
@@ -309,7 +347,8 @@
     "anio": 4,
     "cuatrimestre": "2do Cuatrimestre",
     "correlativas_previas": [],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   },
   {
     "id": "TIF",
@@ -349,6 +388,7 @@
       "PPA_1",
       "MIS_1"
     ],
-    "correlativas_posteriores": []
+    "correlativas_posteriores": [],
+"estado": "pendiente"
   }
 ]

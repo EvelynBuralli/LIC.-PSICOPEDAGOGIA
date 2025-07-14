@@ -49,21 +49,6 @@ main {
     background-color: #dcdcdc;
 }
 
-.materia.aprobada {
-    background-color: #d4edda; /* Verde claro */
-    border-color: #28a745; /* Verde */
-}
-
-.materia.cursando {
-    background-color: #fff3cd; /* Amarillo claro */
-    border-color: #ffc107; /* Amarillo */
-}
-
-.materia.pendiente {
-    background-color: #f8d7da; /* Rojo claro */
-    border-color: #dc3545; /* Rojo */
-}
-
 .materia.resaltada-previas {
     background-color: #add8e6; /* Azul claro para previas */
     border: 2px solid #007bff;
@@ -142,4 +127,26 @@ footer {
 .materias-list {
     display: grid;
     gap: 10px;
+}
+
+/* Estilos para los diferentes estados de las materias (Tus colores) */
+.materia.pendiente {
+    background-color: #BFCCFF; /* Tu color de fondo para Pendiente */
+    border-color: #99AFFF;   /* Tu color de borde para Pendiente */
+}
+
+.materia.aprobada {
+    background-color: #C685FF; /* Tu color de fondo para Aprobada */
+    border-color: #9933FF;   /* Tu color de borde para Aprobada */
+}
+
+.materia.habilitada-final {
+    background-color: #E6C9FF; /* Tu color de fondo para Habilitada para Final */
+    border: 2px solid #C685FF; /* Tu color de borde para Habilitada para Final (aquí puse 2px solid para que sea más notorio) */
+    font-weight: bold; /* Para que resalte más */
+}
+
+.materia.cursando {
+    background-color: #FFADCD; /* Tu color de fondo para Cursando */
+    border-color: #FF458C;   /* Tu color de borde para Cursando */
 }
