@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (materia) {
             switch (materia.estado) {
                 case 'pendiente':
-                    materia.estado = 'cursando';
+                    materia.estado = 'ya_cursada'; // Cambiado de 'cursando' a 'ya_cursada'
                     break;
-                case 'cursando':
+                case 'ya_cursada': // Nuevo caso
                     materia.estado = 'aprobada';
                     break;
                 case 'aprobada':
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         aniosOrdenados.forEach(anioNum => {
             const anioColumna = document.createElement('div');
             anioColumna.classList.add('anio-columna');
-            
+
             // Asignar el título del año según lo solicitado (PRIMER AÑO, SEGUNDO AÑO, etc.)
             let anioTitulo = '';
             switch (parseInt(anioNum)) {
@@ -150,10 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
             materiasDelAnio.forEach(materia => {
                 const materiaDiv = document.createElement('div');
                 materiaDiv.classList.add('materia');
-                materiaDiv.classList.add(materia.estado); // Añade la clase de estado (pendiente, cursando, aprobada)
+                // Añade la clase de estado (pendiente, ya_cursada, aprobada)
+                materiaDiv.classList.add(materia.estado);
                 materiaDiv.dataset.id = materia.id; // Guarda el ID de la materia
                 materiaDiv.textContent = materia.nombre;
-                materiaDiv.title = `Estado: ${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1)}\nCuatrimestre: ${materia.cuatrimestre}`; // Tooltip mejorado
+                // Tooltip mejorado, mostrando "Ya Cursada"
+                materiaDiv.title = `Estado: ${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1).replace('_', ' ')}\nCuatrimestre: ${materia.cuatrimestre}`;
 
                 // Evento para cambiar estado (un solo clic)
                 materiaDiv.addEventListener('click', (e) => {
