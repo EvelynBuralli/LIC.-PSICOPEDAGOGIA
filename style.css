@@ -26,7 +26,7 @@ h1 {
 #malla-container {
     display: flex; /* Habilita Flexbox para las columnas de año */
     justify-content: center; /* Centra las columnas horizontalmente */
-    gap: 40px; /* Espacio entre las columnas (aumentado para el separador vertical) */
+    gap: 20px; /* Reducido para que estén más juntas */
     flex-wrap: wrap; /* Permite que las columnas salten a la siguiente línea en pantallas pequeñas */
     padding: 20px;
     max-width: 1200px; /* Ancho máximo para la malla completa */
@@ -38,8 +38,8 @@ h1 {
 /* Estilos para cada columna de año (PRIMER AÑO, SEGUNDO AÑO, etc.) */
 .anio-columna {
     flex: 1; /* Permite que cada columna crezca y ocupe espacio equitativamente */
-    min-width: 250px; /* Ancho mínimo para cada columna */
-    max-width: 300px; /* Ancho máximo deseado para cada columna */
+    min-width: 220px; /* Ligeramente reducido el mínimo */
+    max-width: 270px; /* Reducido el máximo para que quepan 4 en 1200px con gaps */
     background-color: #ffffff; /* Fondo blanco para las columnas */
     padding: 20px;
     border-radius: 8px;
@@ -55,7 +55,7 @@ h1 {
 .anio-columna h2 {
     font-family: 'Winky Rough', cursive; /* Aplica la fuente Winky Rough */
     font-weight: 700;
-    color: #0056b3; /* Un color azul para los títulos de año */
+    color: #5200A3; /* ¡Color cambiado a #5200A3! */
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
@@ -70,7 +70,7 @@ h1 {
 .anio-columna:not(:last-child)::after {
     content: '|'; /* El carácter de la barra vertical */
     position: absolute;
-    right: -25px; /* Ajusta la posición para que quede en el centro del espacio entre columnas */
+    right: -15px; /* Ajustado para el nuevo gap de 20px */
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%); /* Ajuste fino de la posición vertical */
     font-size: 2.5em; /* Tamaño de la barra */
@@ -105,8 +105,8 @@ h1 {
     color: #333;
 }
 
-.materia.cursando {
-    background-color: #FFADCD; /* Rosa claro - Cursando */
+.materia.ya_cursada { /* ¡Renombrado de .materia.cursando a .materia.ya_cursada! */
+    background-color: #FFADCD; /* Rosa claro - YA CURSADA */
     color: #333;
 }
 
