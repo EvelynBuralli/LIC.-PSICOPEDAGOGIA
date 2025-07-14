@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mallaContainer = document.getElementById('malla-container');
-    const materiaDetalle = document.getElementById('materia-detalle');
     let materiasData = []; // Para almacenar los datos de las materias
 
     // --- Carga de datos de materias ---
@@ -38,28 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('materiasState', JSON.stringify(statesToSave));
     }
 
-    function toggleMateriaState(materiaId) {
-        const materia = materiasData.find(m => m.id === materiaId);
-        if (materia) {
-            switch (materia.estado) {
-                case 'pendiente':
-                    materia.estado = 'cursando';
-                    break;
-                case 'cursando':
-                    materia.estado = 'aprobada';
-                    break;
-                case 'aprobada':
-                    materia.estado = 'pendiente'; // Vuelve a pendiente si ya está aprobada
-                    break;
-                default:
-                    materia.estado = 'pendiente';
-            }
-            saveMateriasState(); // Guarda el nuevo estado
-            renderMalla(); // Vuelve a renderizar la malla para aplicar los nuevos colores
-            checkHabilitadasParaFinal(); // Re-chequea habilitadas para final
-            updateMateriaDetalle(materia); // Actualiza el detalle si es la materia mostrada
+function toggleMateriaState(materiaId) {
+    const materia = materiasData.find(m => m.id === materiaId);
+    if (materia) {
+        switch (materia.estado) {
+            case 'pendiente':
+                materia.estado = 'cursando';
+                break;
+            case 'cursando':
+                materia.estado = 'aprobada';
+                break;
+            case 'aprobada':
+                materia.estado = 'pendiente'; // Vuelve a pendiente
+                break;
+            default:
+                materia.estado = 'pendiente';
         }
+        saveMateriasState(); // Guarda el nuevo estado
+        renderMalla(); // Vuelve a renderizar la malla para aplicar los nuevos colores
+        checkHabilitadasParaFinal(); // Re-chequea habilitadas para final
+        // No actualizamos el detalle aquí, ya que el clic ahora es para el estado
+        // Si el detalle se muestra, se actualizará en selectMateria si el usuario hace click simple.
+       
     }
+}
 
     // --- Lógica para verificar materias habilitadas para final ---
 
@@ -116,18 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
         anioColumna.classList.add('anio-columna');
         anioColumna.innerHTML = `<h2>Año ${anioNum}</h2>`;
 
-        // Ordenar materias dentro del año por cuatrimestre y luego alfabéticamente
-        const materiasDelAnio = anios[anioNum].sort((a, b) => {
-            const ordenCuatrimestre = { "1er Cuatrimestre": 1, "2do Cuatrimestre": 2, "Anual": 3 };
-            const cuatrimestreA = ordenCuatrimestre[a.cuatrimestre] || 99; // Fallback para si no tiene cuatrimestre o es desconocido
-            const cuatrimestreB = ordenCuatrimestre[b.cuatrimestre] || 99;
+        // Ordenar materias dentro del año por cuatrimestre (Anual, 1er, 2do) y luego alfabéticamente
+const materiasDelAnio = anios[anioNum].sort((a, b) => {
+    const ordenCuatrimestre = { "Anual": 1, "1er Cuatrimestre": 2, "2do Cuatrimestre": 3 };
+    const cuatrimestreA = ordenCuatrimestre[a.cuatrimestre] || 99;
+    const cuatrimestreB = ordenCuatrimestre[b.cuatrimestre] || 99;
 
-            if (cuatrimestreA !== cuatrimestreB) {
-                return cuatrimestreA - cuatrimestreB;
-            }
-            return a.nombre.localeCompare(b.nombre); // Orden alfabético si el cuatrimestre es el mismo
-        });
-
+    if (cuatrimestreA !== cuatrimestreB) {
+        return cuatrimestreA - cuatrimestreB;
+    }
+    return a.nombre.localeCompare(b.nombre);
+});
 
         materiasDelAnio.forEach(materia => {
             const materiaDiv = document.createElement('div');
@@ -137,14 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
             materiaDiv.textContent = materia.nombre;
             materiaDiv.title = `Estado: ${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1)}\nCuatrimestre: ${materia.cuatrimestre}`; // Tooltip mejorado
 
-            // Evento para mostrar detalles y cambiar estado
-            materiaDiv.addEventListener('click', () => {
-                selectMateria(materia.id);
-            });
-            materiaDiv.addEventListener('dblclick', (e) => { // Doble clic para cambiar estado
-                e.stopPropagation(); // Evita que se dispare el click simple también
-                toggleMateriaState(materia.id);
-            });
+// Evento para cambiar estado (un solo clic)
+materiaDiv.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic se propague si hay otros listeners
+    toggleMateriaState(materia.id);
+});
+// Si aún quieres un clic para ver detalles, lo haremos con un botón en el detalle
+// o un clic secundario/derecho si es necesario, pero el clic principal es para el estado.
 
             anioColumna.appendChild(materiaDiv);
         });
@@ -152,63 +151,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 }
 
-    function selectMateria(id) {
-        // Remueve resaltado de todas las materias
-        document.querySelectorAll('.materia').forEach(el => {
-            el.classList.remove('resaltada-previas', 'resaltada-posteriores', 'seleccionada');
-        });
-
-        const selectedMateria = materiasData.find(m => m.id === id);
-        if (selectedMateria) {
-            // Resalta la materia seleccionada
-            const selectedElement = document.querySelector(`.materia[data-id="${id}"]`);
-            if (selectedElement) {
-                selectedElement.classList.add('seleccionada');
-            }
-
-            // Muestra detalle de la materia
-            updateMateriaDetalle(selectedMateria);
-
-            // Resalta previas
-            selectedMateria.correlativas_previas.forEach(prevId => {
-                const prevElement = document.querySelector(`.materia[data-id="${prevId}"]`);
-                if (prevElement) {
-                    prevElement.classList.add('resaltada-previas');
-                }
-            });
-
-            // Resalta posteriores
-            selectedMateria.correlativas_posteriores.forEach(postId => {
-                const postElement = document.querySelector(`.materia[data-id="${postId}"]`);
-                if (postElement) {
-                    postElement.classList.add('resaltada-posteriores');
-                }
-            });
-        }
-    }
-
-    function updateMateriaDetalle(materia) {
-        materiaDetalle.innerHTML = `
-            <h3>${materia.nombre}</h3>
-            <p><strong>Año:</strong> ${materia.anio}</p>
-            <p><strong>Cuatrimestre:</strong> ${materia.cuatrimestre}</p>
-            <p><strong>Estado:</strong> <span id="detalle-estado">${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1)}</span></p>
-            <p><strong>Correlativas Previas:</strong> ${materia.correlativas_previas.length > 0 ? materia.correlativas_previas.map(id => materiasData.find(m => m.id === id)?.nombre || id).join(', ') : 'Ninguna'}</p>
-            <p><strong>Correlativas Posteriores:</strong> ${materia.correlativas_posteriores.length > 0 ? materia.correlativas_posteriores.map(id => materiasData.find(m => m.id === id)?.nombre || id).join(', ') : 'Ninguna'}</p>
-            <button id="toggle-state-button">Cambiar Estado</button>
-        `;
-
-        document.getElementById('toggle-state-button').addEventListener('click', () => {
-            toggleMateriaState(materia.id);
-        });
-
-        materiaDetalle.classList.remove('hidden');
-    }
-
-    // Ocultar el panel de detalle cuando se hace clic fuera
-    document.addEventListener('click', (event) => {
-        if (!mallaContainer.contains(event.target) && !materiaDetalle.contains(event.target) && !event.target.classList.contains('materia')) {
-            materiaDetalle.classList.add('hidden');
-        }
-    });
-});
+   
