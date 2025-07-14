@@ -26,7 +26,7 @@ h1 {
 #malla-container {
     display: flex; /* Habilita Flexbox para las columnas de año */
     justify-content: center; /* Centra las columnas horizontalmente */
-    gap: 20px; /* Reducido para que estén más juntas */
+    gap: 20px; /* Espacio reducido para que estén más juntas */
     flex-wrap: wrap; /* Permite que las columnas salten a la siguiente línea en pantallas pequeñas */
     padding: 20px;
     max-width: 1200px; /* Ancho máximo para la malla completa */
@@ -99,19 +99,25 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Estilos para los diferentes estados de las materias (Tus colores) */
+/* --- ESTILOS PARA LOS NUEVOS ESTADOS DE LAS MATERIAS --- */
+
 .materia.pendiente {
-    background-color: #BFCCFF; /* Azul claro - Pendiente */
+    background-color: #FF8FBA; /* ¡Nuevo color para Pendiente! */
     color: #333;
 }
 
-.materia.ya_cursada { /* ¡Renombrado de .materia.cursando a .materia.ya_cursada! */
-    background-color: #FFADCD; /* Rosa claro - YA CURSADA */
+.materia.cursando_activo { /* ¡NUEVA CLASE para el estado "CURSANDO"! */
+    background-color: #FFB3FC; /* ¡Nuevo color para Cursando! */
+    color: #333;
+}
+
+.materia.cursada_finalizada { /* ¡NUEVA CLASE para el estado "CURSADA"! */
+    background-color: #E6C9FF; /* ¡Nuevo color para Cursada! */
     color: #333;
 }
 
 .materia.aprobada {
-    background-color: #C685FF; /* Violeta claro - Aprobada */
+    background-color: #9933FF; /* ¡Nuevo color para Aprobada! */
     color: #333;
     text-decoration: line-through; /* ¡Aquí se tacha la materia! */
     opacity: 0.8; /* Ligeramente más transparente cuando está aprobada */
@@ -119,9 +125,9 @@ h1 {
 
 /* Estilo para las materias que están habilitadas para rendir el final */
 .materia.habilitada-final {
-    background-color: #E6C9FF; /* Violeta más claro/lavanda - Habilitada para final (tu color) */
+    background-color: #FFFF99; /* ¡NUEVO COLOR DISTINTIVO para Habilitada para Final! (Amarillo vibrante) */
     color: #333;
-    border: 2px solid #6A5ACD; /* Un borde distintivo para que se vea el "descubrimiento" */
+    border: 2px solid #FFD700; /* Un borde amarillo oscuro para destacar */
     animation: pulse 1.5s infinite alternate; /* Añadimos una pequeña animación para que se note más */
 }
 
@@ -129,16 +135,13 @@ h1 {
 @keyframes pulse {
     from {
         transform: scale(1);
-        box-shadow: 0 0 5px rgba(106, 90, 205, 0.4);
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
     }
     to {
         transform: scale(1.02);
-        box-shadow: 0 0 15px rgba(106, 90, 205, 0.8);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
     }
 }
-
-/* Removido: estilos para materia-detalle y resaltada-previas/posteriores, ya que eliminamos el panel de detalle */
-/* Removido: .hidden class si no se usa en otras partes */
 
 footer {
     text-align: center;
