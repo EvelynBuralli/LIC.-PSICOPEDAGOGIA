@@ -1,0 +1,354 @@
+[
+  {
+    "id": "FILO",
+    "nombre": "Filosofía",
+    "anio": 1,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["ETI_RESP", "TIF"]
+  },
+  {
+    "id": "TALLER_PSICO",
+    "nombre": "Taller de Psicopedagogía: fundamentos de la disciplina",
+    "anio": 1,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["TEOR1", "ETI_RESP", "TEORI2", "TEORI3", "PSP_INST", "TIF"]
+  },
+  {
+    "id": "PSI_DESARR",
+    "nombre": "Psicología del desarrollo de las Infancias y las Adolescencias",
+    "anio": 1,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["DYT_PSP", "PSIAN", "PSI_ADANC", "TIF"]
+  },
+  {
+    "id": "PSI_PERS",
+    "nombre": "Psicología de la Personalidad",
+    "anio": 1,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["FUN_LA", "PSIAN", "TEORI2", "TEORI3", "PSI_ADANC", "PPA_1", "TIF"]
+  },
+  {
+    "id": "PSI_EDUCACI",
+    "nombre": "Psicología de la Educación",
+    "anio": 1,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["DID_Y_ESP", "PSI_COG_AP", "PEDA", "PSP_INST", "TIF"]
+  },
+  {
+    "id": "DES_NEURO_AP",
+    "nombre": "Desarrollo Neurológico y Aprendizaje",
+    "anio": 1,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["TEOR1", "TIF"]
+  },
+  {
+    "id": "PARADIG_INV_SOC",
+    "nombre": "Paradigmas Vigentes en Investigación Social",
+    "anio": 1,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["DID_Y_ESP", "ESTDST", "TIF"]
+  },
+  {
+    "id": "DID_Y_ESP",
+    "nombre": "Didáctica General y Específicas",
+    "anio": 1,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_EDUCACI", "PARADIG_INV_SOC"],
+    "correlativas_posteriores": ["TIF"]
+  },
+  {
+    "id": "PSI_COG_AP",
+    "nombre": "Psicología Cognitiva y Aprendizaje",
+    "anio": 1,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_EDUCACI"],
+    "correlativas_posteriores": ["TEOR1", "ESTDST", "TIF"]
+  },
+  {
+    "id": "PEDA",
+    "nombre": "Pedagogía",
+    "anio": 1,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_EDUCACI"],
+    "correlativas_posteriores": ["PSP_INST", "TIF"]
+  },
+  {
+    "id": "FUN_LA",
+    "nombre": "Fundamentos de la Evaluación Psicopedagógica",
+    "anio": 1,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_PERS"],
+    "correlativas_posteriores": ["DYT_PSP", "TEORI2", "TEORI3", "TIF"]
+  },
+  {
+    "id": "TEO101",
+    "nombre": "Teología",
+    "anio": 2,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["TIF"]
+  },
+  {
+    "id": "DYT_PSP",
+    "nombre": "Diagnóstico y Técnicas Psicopedagógicas I: Infancias y Adolescencias",
+    "anio": 2,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": ["PSI_DESARR", "FUN_LA"],
+    "correlativas_posteriores": ["DYT_PSP2", "TIF"]
+  },
+  {
+    "id": "TEOR1",
+    "nombre": "Teoría Psicopedagógica I: abordaje sistémico y neurocognitivo",
+    "anio": 2,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["TALLER_PSICO", "DES_NEURO_AP", "PSI_COG_AP"],
+    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"]
+  },
+  {
+    "id": "ETI_RESP",
+    "nombre": "Ética, Responsabilidad Social Universitaria e Inclusión",
+    "anio": 2,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["FILO", "TALLER_PSICO"],
+    "correlativas_posteriores": ["OPT1", "OPT2", "PSP_FCOM", "TIF"]
+  },
+  {
+    "id": "PSIAN",
+    "nombre": "Psicoanálisis",
+    "anio": 2,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": ["PSI_DESARR", "PSI_PERS"],
+    "correlativas_posteriores": ["PPA_1", "TIF"]
+  },
+  {
+    "id": "TEORI2",
+    "nombre": "Teoría Psicopedagógica II: abordaje psicoanalítico y de la epistemológica convergente",
+    "anio": 2,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["TALLER_PSICO", "FUN_LA", "PSI_PERS"],
+    "correlativas_posteriores": ["PSPT_A", "TIF"]
+  },
+  {
+    "id": "TEORI3",
+    "nombre": "Teoría Psicopedagógica III: abordaje humanístico y existencial",
+    "anio": 2,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["TALLER_PSICO", "FUN_LA", "PSI_PERS"],
+    "correlativas_posteriores": ["PSPT_A", "TIF"]
+  },
+  {
+    "id": "ESTDST",
+    "nombre": "Estadística",
+    "anio": 2,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PARADIG_INV_SOC", "PSI_COG_AP"],
+    "correlativas_posteriores": ["PSCTA", "MIS_1", "TIF"]
+  },
+  {
+    "id": "PSP_INST",
+    "nombre": "Psicopedagogía en Instituciones Educativas I",
+    "anio": 2,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["TALLER_PSICO", "PSI_EDUCACI", "PEDA"],
+    "correlativas_posteriores": ["PGE_OIE", "PSP_INST2", "ORP_VOC", "INP_ORG", "TIF"]
+  },
+  {
+    "id": "PSI_ADANC",
+    "nombre": "Psicología del Desarrollo de la Adultez y Ancianidad",
+    "anio": 2,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_DESARR", "PSI_PERS"],
+    "correlativas_posteriores": ["DYT_PSP2", "PSPT_A", "TIF"]
+  },
+  {
+    "id": "DSI_1",
+    "nombre": "Doctrina social de la Iglesia",
+    "anio": 3,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": [],
+    "correlativas_posteriores": ["TIF"]
+  },
+  {
+    "id": "DYT_PSP2",
+    "nombre": "Diagnóstico y Técnicas Psicopedagógicas II: adultez y ancianidad",
+    "anio": 3,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": ["DYT_PSP", "PSI_ADANC", "TEOR1"],
+    "correlativas_posteriores": ["INT_IYJ", "INT_AA", "TIF"]
+  },
+  {
+    "id": "PSPT_A",
+    "nombre": "Psicopedagogía Terapéutica: adultez y ancianidad",
+    "anio": 3,
+    "cuatrimestre": "Anual",
+    "correlativas_previas": ["TEOR1", "TEORI2", "TEORI3", "PSI_ADANC"],
+    "correlativas_posteriores": ["INT_AA", "TIF"]
+  },
+  {
+    "id": "PGE_OIE",
+    "nombre": "Política y gestión educativa orientada a la intervención en inclusión escolar",
+    "anio": 3,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["PSP_INST"],
+    "correlativas_posteriores": ["EST_TEM", "TIF"]
+  },
+  {
+    "id": "PSCTA",
+    "nombre": "Psicometría",
+    "anio": 3,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["ESTDST"],
+    "correlativas_posteriores": ["INT_IYJ", "TIF"]
+  },
+  {
+    "id": "OPT1",
+    "nombre": "Optativa I",
+    "anio": 3,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["ETI_RESP"],
+    "correlativas_posteriores": ["TIF"]
+  },
+  {
+    "id": "OPT2",
+    "nombre": "Optativa II",
+    "anio": 3,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["ETI_RESP"],
+    "correlativas_posteriores": ["TIF"]
+  },
+  {
+    "id": "PSP_INST2",
+    "nombre": "Psicopedagogía en Instituciones Educativas II",
+    "anio": 3,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSP_INST"],
+    "correlativas_posteriores": ["PSP_LAB", "ORP_VOC", "INP_ORG", "TIF"]
+  },
+  {
+    "id": "PPA_1",
+    "nombre": "Psicopatología",
+    "anio": 3,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["PSI_PERS", "PSIAN"],
+    "correlativas_posteriores": ["EST_TEM", "TIF"]
+  },
+  {
+    "id": "MIS_1",
+    "nombre": "Métodos de Investigación Social",
+    "anio": 3,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": ["ESTDST"],
+    "correlativas_posteriores": ["PSP_LAB", "INT_IYJ", "TIF"]
+  },
+  {
+    "id": "PSP_LAB",
+    "nombre": "Psicopedagogía Laboral",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["PSP_INST2", "MIS_1"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "ORP_VOC",
+    "nombre": "Orientación Vocacional",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["PSP_INST", "PSP_INST2"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "EST_TEM",
+    "nombre": "Estimulación temprana",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["PGE_OIE", "PPA_1"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "PSP_FCOM",
+    "nombre": "Psicopedagogía Forense y Comunitaria",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["ETI_RESP"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "INT_IYJ",
+    "nombre": "Intervención en Clínica Psicopedagógica de Infancias y Juventudes",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["DYT_PSP2", "PSCTA", "MIS_1"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "INP_ORG",
+    "nombre": "Intervención en Organizaciones",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["PSP_INST", "PSP_INST2"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "INT_AA",
+    "nombre": "Intervención en Clínica Psicopedagógica de la adultez y ancianidad",
+    "anio": 4,
+    "cuatrimestre": "1er Cuatrimestre",
+    "correlativas_previas": ["DYT_PSP2", "PSPT_A"],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "ELE_1",
+    "nombre": "Electiva",
+    "anio": 4,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": [],
+    "correlativas_posteriores": []
+  },
+  {
+    "id": "TIF",
+    "nombre": "Trabajo Integrador Final",
+    "anio": 4,
+    "cuatrimestre": "2do Cuatrimestre",
+    "correlativas_previas": [
+      "FILO",
+      "TALLER_PSICO",
+      "PSI_DESARR",
+      "PSI_PERS",
+      "PSI_EDUCACI",
+      "DES_NEURO_AP",
+      "PARADIG_INV_SOC",
+      "DID_Y_ESP",
+      "PSI_COG_AP",
+      "PEDA",
+      "FUN_LA",
+      "TEO101",
+      "DYT_PSP",
+      "TEOR1",
+      "ETI_RESP",
+      "PSIAN",
+      "TEORI2",
+      "TEORI3",
+      "ESTDST",
+      "PSP_INST",
+      "PSI_ADANC",
+      "DSI_1",
+      "DYT_PSP2",
+      "PSPT_A",
+      "PGE_OIE",
+      "PSCTA",
+      "OPT1",
+      "OPT2",
+      "PSP_INST2",
+      "PPA_1",
+      "MIS_1"
+    ],
+    "correlativas_posteriores": []
+  }
+]
