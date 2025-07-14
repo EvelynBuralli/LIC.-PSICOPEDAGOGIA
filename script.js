@@ -95,59 +95,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Funciones de renderizado (actualizadas) ---
 
-    function renderMalla() {
-        mallaContainer.innerHTML = ''; // Limpia el contenedor antes de renderizar
-        const anios = {};
+        function renderMalla() {
+    mallaContainer.innerHTML = ''; // Limpia el contenedor antes de renderizar
+    const anios = {};
 
-        materiasData.forEach(materia => {
-            if (!anios[materia.anio]) {
-                anios[materia.anio] = {};
+    // Agrupar materias por año
+    materiasData.forEach(materia => {
+        if (!anios[materia.anio]) {
+            anios[materia.anio] = []; // Ahora es un array para las materias del año
+        }
+        anios[materia.anio].push(materia);
+    });
+
+    // Obtener los años en orden numérico
+    const aniosOrdenados = Object.keys(anios).sort((a, b) => parseInt(a) - parseInt(b));
+
+    // Renderizar cada columna de año
+    aniosOrdenados.forEach(anioNum => {
+        const anioColumna = document.createElement('div');
+        anioColumna.classList.add('anio-columna');
+        anioColumna.innerHTML = `<h2>Año ${anioNum}</h2>`;
+
+        // Ordenar materias dentro del año por cuatrimestre y luego alfabéticamente
+        const materiasDelAnio = anios[anioNum].sort((a, b) => {
+            const ordenCuatrimestre = { "1er Cuatrimestre": 1, "2do Cuatrimestre": 2, "Anual": 3 };
+            const cuatrimestreA = ordenCuatrimestre[a.cuatrimestre] || 99; // Fallback para si no tiene cuatrimestre o es desconocido
+            const cuatrimestreB = ordenCuatrimestre[b.cuatrimestre] || 99;
+
+            if (cuatrimestreA !== cuatrimestreB) {
+                return cuatrimestreA - cuatrimestreB;
             }
-            if (!anios[materia.anio][materia.cuatrimestre]) {
-                anios[materia.anio][materia.cuatrimestre] = [];
-            }
-            anios[materia.anio][materia.cuatrimestre].push(materia);
+            return a.nombre.localeCompare(b.nombre); // Orden alfabético si el cuatrimestre es el mismo
         });
 
-        const cuatrimestresOrden = ["1er Cuatrimestre", "2do Cuatrimestre", "Anual"]; // Orden específico
 
-        for (const anioNum in anios) {
-            const anioContainer = document.createElement('div');
-            anioContainer.classList.add('anio-container');
-            anioContainer.innerHTML = `<h2>Año ${anioNum}</h2>`;
+        materiasDelAnio.forEach(materia => {
+            const materiaDiv = document.createElement('div');
+            materiaDiv.classList.add('materia');
+            materiaDiv.classList.add(materia.estado); // Añade la clase de estado (pendiente, cursando, aprobada)
+            materiaDiv.dataset.id = materia.id; // Guarda el ID de la materia
+            materiaDiv.textContent = materia.nombre;
+            materiaDiv.title = `Estado: ${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1)}\nCuatrimestre: ${materia.cuatrimestre}`; // Tooltip mejorado
 
-            cuatrimestresOrden.forEach(cuatrimestreNombre => {
-                if (anios[anioNum][cuatrimestreNombre]) {
-                    const cuatrimestreContainer = document.createElement('div');
-                    cuatrimestreContainer.classList.add('anio-cuatrimestre-container');
-                    cuatrimestreContainer.innerHTML = `<h3>${cuatrimestreNombre}</h3><div class="materias-list"></div>`;
-                    const materiasListDiv = cuatrimestreContainer.querySelector('.materias-list');
-
-                    anios[anioNum][cuatrimestreNombre].forEach(materia => {
-                        const materiaDiv = document.createElement('div');
-                        materiaDiv.classList.add('materia');
-                        materiaDiv.classList.add(materia.estado); // Añade la clase de estado
-                        materiaDiv.dataset.id = materia.id; // Guarda el ID de la materia
-                        materiaDiv.textContent = materia.nombre;
-                        materiaDiv.title = `Estado: ${materia.estado.charAt(0).toUpperCase() + materia.estado.slice(1)}`; // Tooltip
-
-                        // Evento para mostrar detalles y cambiar estado
-                        materiaDiv.addEventListener('click', () => {
-                            selectMateria(materia.id);
-                        });
-                        materiaDiv.addEventListener('dblclick', (e) => { // Doble clic para cambiar estado
-                            e.stopPropagation(); // Evita que se dispare el click simple también
-                            toggleMateriaState(materia.id);
-                        });
-
-                        materiasListDiv.appendChild(materiaDiv);
-                    });
-                    anioContainer.appendChild(cuatrimestreContainer);
-                }
+            // Evento para mostrar detalles y cambiar estado
+            materiaDiv.addEventListener('click', () => {
+                selectMateria(materia.id);
             });
-            mallaContainer.appendChild(anioContainer);
-        }
-    }
+            materiaDiv.addEventListener('dblclick', (e) => { // Doble clic para cambiar estado
+                e.stopPropagation(); // Evita que se dispare el click simple también
+                toggleMateriaState(materia.id);
+            });
+
+            anioColumna.appendChild(materiaDiv);
+        });
+        mallaContainer.appendChild(anioColumna);
+    });
+}
 
     function selectMateria(id) {
         // Remueve resaltado de todas las materias
