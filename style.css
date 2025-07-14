@@ -1,5 +1,8 @@
 /* style.css */
 
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&family=Winky+Rough&display=swap');
+
 body {
     font-family: sans-serif; /* Deja un tipo de letra genérico como respaldo */
     margin: 0;
@@ -9,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50; /* Puedes mantener o cambiar este color de cabecera */
+    background-color: #4CAF50;
     color: white;
     padding: 1rem 0;
     text-align: center;
@@ -17,7 +20,7 @@ header {
 }
 
 h1 {
-    color: white; /* Color blanco para el título principal en el header */
+    color: white;
     margin: 0;
     font-size: 2.5rem;
 }
@@ -26,21 +29,21 @@ h1 {
 #malla-container {
     display: flex; /* Habilita Flexbox para las columnas de año */
     justify-content: center; /* Centra las columnas horizontalmente */
-    gap: 20px; /* Espacio reducido para que estén más juntas */
+    gap: 20px; /* Espacio reducido entre columnas */
     flex-wrap: wrap; /* Permite que las columnas salten a la siguiente línea en pantallas pequeñas */
     padding: 20px;
     max-width: 1200px; /* Ancho máximo para la malla completa */
     margin: 20px auto; /* Centra el contenedor principal en la página */
-    box-shadow: none; /* Sin sombra en el contenedor principal si no es necesario */
-    background-color: transparent; /* Fondo transparente */
+    box-shadow: none;
+    background-color: transparent;
 }
 
 /* Estilos para cada columna de año (PRIMER AÑO, SEGUNDO AÑO, etc.) */
 .anio-columna {
     flex: 1; /* Permite que cada columna crezca y ocupe espacio equitativamente */
-    min-width: 220px; /* Ligeramente reducido el mínimo */
-    max-width: 270px; /* Reducido el máximo para que quepan 4 en 1200px con gaps */
-    background-color: #ffffff; /* Fondo blanco para las columnas */
+    min-width: 220px; /* Ancho mínimo reducido para cada columna */
+    max-width: 270px; /* Ancho máximo reducido para cada columna */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -53,34 +56,34 @@ h1 {
 
 /* Estilo para los títulos de año (PRIMER AÑO, SEGUNDO AÑO, etc.) */
 .anio-columna h2 {
-    font-family: 'Winky Rough', cursive; /* Aplica la fuente Winky Rough */
+    font-family: 'Winky Rough', cursive; /* Fuente Winky Rough para títulos de año */
     font-weight: 700;
-    color: #5200A3; /* ¡Color cambiado a #5200A3! */
+    color: #5200A3; /* Color de título de año: #5200A3 */
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
-    text-transform: uppercase; /* Para que se vean en mayúsculas */
+    text-transform: uppercase;
     font-size: 1.8em;
     border-bottom: 2px solid #eee; /* Línea separadora bajo el título del año */
     padding-bottom: 10px;
-    width: 100%; /* Asegura que la línea abarque todo el ancho */
+    width: 100%;
 }
 
 /* Estilo para el separador vertical entre columnas */
 .anio-columna:not(:last-child)::after {
     content: '|'; /* El carácter de la barra vertical */
     position: absolute;
-    right: -15px; /* Ajustado para el nuevo gap de 20px */
+    right: -15px; /* Ajusta la posición para el gap de 20px */
     top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Ajuste fino de la posición vertical */
-    font-size: 2.5em; /* Tamaño de la barra */
-    color: #ccc; /* Color gris claro para la barra */
+    transform: translateY(-50%);
+    font-size: 2.5em;
+    color: #ccc;
     font-weight: bold;
 }
 
 /* Estilo para los nombres de las materias individuales */
 .materia {
-    font-family: 'LXGW Marker Gothic', cursive; /* Aplica la fuente LXGW Marker Gothic */
+    font-family: 'LXGW Marker Gothic', cursive; /* Fuente LXGW Marker Gothic para nombres de materias */
     font-weight: 400;
     padding: 10px 15px;
     margin-bottom: 8px;
@@ -89,9 +92,9 @@ h1 {
     transition: background-color 0.3s ease, border 0.3s ease, text-decoration 0.3s ease;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     text-align: center;
-    border: 1px solid transparent; /* Borde transparente por defecto */
+    border: 1px solid transparent;
     font-size: 1.1em;
-    width: calc(100% - 30px); /* Ajusta el ancho para el padding */
+    width: calc(100% - 30px);
 }
 
 .materia:hover {
@@ -99,36 +102,37 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* --- ESTILOS PARA LOS NUEVOS ESTADOS DE LAS MATERIAS --- */
+/* --- ESTILOS PARA LOS 4 ESTADOS DE LAS MATERIAS (Colores solicitados) --- */
 
 .materia.pendiente {
-    background-color: #FF8FBA; /* ¡PENDIENTE: #FF8FBA! */
+    background-color: #FF8FBA; /* COLOR SOLICITADO: PENDIENTE */
     color: #333;
 }
 
-.materia.cursando_activo { /* ¡CURSANDO: #FFB3FC! */
-    background-color: #FFB3FC;
+.materia.cursando_activo {
+    background-color: #FFB3FC; /* COLOR SOLICITADO: CURSANDO */
     color: #333;
 }
 
-.materia.cursada_finalizada { /* ¡CURSADA: #E6C9FF! */
-    background-color: #E6C9FF;
+.materia.cursada_finalizada {
+    background-color: #E6C9FF; /* COLOR SOLICITADO: CURSADA */
     color: #333;
 }
 
 .materia.aprobada {
-    background-color: #9933FF; /* ¡APROBADA: #9933FF! */
+    background-color: #9933FF; /* COLOR SOLICITADO: APROBADA */
     color: #333;
-    text-decoration: line-through; /* ¡Aquí se tacha la materia! */
-    opacity: 0.8; /* Ligeramente más transparente cuando está aprobada */
+    text-decoration: line-through; /* Tacha la materia al ser aprobada */
+    opacity: 0.8;
 }
 
 /* Estilo para las materias que están habilitadas para rendir el final */
 .materia.habilitada-final {
-    background-color: #FFFF99; /* Color distintivo para Habilitada para Final. */
+    /* Nuevo color distintivo, ya que #E6C9FF fue asignado a "Cursada" */
+    background-color: #FFFF99; /* Amarillo vibrante para "Habilitada para Final" */
     color: #333;
-    border: 2px solid #FFD700; /* Un borde amarillo oscuro para destacar */
-    animation: pulse 1.5s infinite alternate; /* Añadimos una pequeña animación para que se note más */
+    border: 2px solid #FFD700; /* Borde amarillo oscuro para destacar */
+    animation: pulse 1.5s infinite alternate; /* Animación de pulso */
 }
 
 /* Definición de la animación de pulso para .habilitada-final */
@@ -151,7 +155,7 @@ footer {
     margin-top: 20px;
 }
 
-/* Responsive adjustments */
+/* Ajustes Responsive (para pantallas pequeñas) */
 @media (max-width: 768px) {
     #malla-container {
         flex-direction: column; /* Apila las columnas en pantallas pequeñas */
